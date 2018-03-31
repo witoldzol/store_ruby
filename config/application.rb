@@ -16,3 +16,10 @@ module StoreRuby
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+#ensures that sass is used over default scss
+if Rails.configuration.respond_to?(:sass)
+  Rails.configuration.sass.tap do |config|
+    config.preferred_syntax = :sass
+  end
+end 
