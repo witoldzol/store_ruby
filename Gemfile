@@ -23,6 +23,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'stripe', :git=>'https://github.com/stripe/stripe-ruby'
 #add bootstrap
 gem 'bootstrap-sass'
+#prefixer for sass
+gem 'autoprefixer-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
