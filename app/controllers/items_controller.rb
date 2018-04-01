@@ -4,8 +4,8 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-#    @items = Item.all
-    @items = Item.order(:title).to_a
+    @items = Item.all
+#   @products = Item.order(:title).to_a
   end
 
   # GET /items/1
