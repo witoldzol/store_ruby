@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-#  root 'items#index'
-
-  
+  root 'items#index'
   
   get 'site/about' 
 
