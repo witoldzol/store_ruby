@@ -6,8 +6,6 @@ git_source(:github) do |repo_name|
 end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
-#sqlite for development
-gem 'sqlite3', group: [:development,:test]
 #postgress and 12 factor for heroku
 group :production do
   gem 'pg'
@@ -52,6 +50,9 @@ group :development, :test do
 end
 
 group :development do
+  #sqlite for development
+  gem 'sqlite3'
+
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
