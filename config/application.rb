@@ -23,3 +23,4 @@ if Rails.configuration.respond_to?(:sass)
     config.preferred_syntax = :sass
   end
 end 
+

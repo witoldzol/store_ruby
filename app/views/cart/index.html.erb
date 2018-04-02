@@ -1,2 +1,58 @@
-<h1>Cart#index</h1>
-<p>Find me in app/views/cart/index.html.erb</p>
+<h1>Shopping Cart</h1>
+
+<!-- Check if we have items in cart -->
+<% if @cart.empty? %>
+  <p>Cart has no items</p>
+<% end %>
+
+<% total = 0 %>
+
+<div class="cart">
+
+  <div class="cart_info_container">
+
+    <div class="cart_info">Product</div>
+    <div class="cart_info">Price</div>
+    <div class="cart_info">Quantity</div>
+    <div class="cart_info">Total</div>
+
+  </div>
+  
+  <!-- loop through cart items -->
+ <% @cart.each do |id,quantity| %>
+  <% item = item.find_by_id(id) %>
+
+  <div class="item_line">
+
+    <div class="item_line_image">
+      <%= link_to (image_tag item.image, :style => "height:60px"), item %>
+    </div>
+    <div class="item_line_title">
+      <%= number_to_currency(item.price) %>
+    </div>
+    <div class="item_line_quantity">
+      <%= quantity %>
+    </div>
+    <div class="item_line_price">
+      <%= number_to_currency(quantity * item.price, :unit => "EUR")%>
+    </div>
+
+    <!-- calculate total -->
+    <% total += quantity * item.price %>
+ <% end %>
+        
+  </div>
+
+  <div id="cart_total">Total: </div>
+  <div id="total_output">
+    <%= number_to_currency(total, :unit => "EUR" %>
+  </div>
+
+  <div id="continue_shopping">
+
+    <%= link_to 'Continue Shopping', :controller => :items %>
+  </div>
+  
+</div>
+
+
