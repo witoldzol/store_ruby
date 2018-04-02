@@ -25,7 +25,7 @@
   <div class="item_line">
 
     <div class="item_line_image">
-      <%= link_to (image_tag item.image, :style => "height:60px"), item %>
+      <%= link_to (image_tag item.image_url, :style => "height:60px"), item %>
     </div>
     <div class="item_line_title">
       <%= number_to_currency(item.price) %>
