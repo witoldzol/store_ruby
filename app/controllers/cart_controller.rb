@@ -1,6 +1,6 @@
 class CartController < ApplicationController
 
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
   
   #if cart exists, display it on the page
   #otherwise give it an empty value
