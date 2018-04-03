@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   get '/contact' => 'site#contact'
 
+  get '/Admin' => 'user#admin_login'
+
+  
   devise_for :users
   resources :items
 
