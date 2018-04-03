@@ -1,6 +1,12 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
+  def ensure_admin
+    unless current_user && current_user.admin?
+      render :text => "Access Error Message", :status => :uauthorized
+    end
+  end
+  
   # GET /items
   # GET /items.json
   def index

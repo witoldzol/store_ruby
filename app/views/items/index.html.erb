@@ -16,10 +16,12 @@
           <%= number_to_currency(item.price, :unit => "&euro; ".html_safe) %>
         </div>
 	<% if session[:login] == 1 %>
+	<% if current_user.admin? %>
         <div class="buttons">
           <button class="btn btn-primary"><%= link_to 'Edit', edit_item_path(item), :style => "color:white" %></button>
           <button class="btn btn-danger"><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:white" %></button>
         </div>
+	<% end %>
 	<% end %>
     </div>    
   <% end %>
