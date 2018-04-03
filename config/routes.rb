@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :profiles
+
+  devise_for :users
+
   root 'items#index'
   
   get 'cart/index'
@@ -12,10 +16,19 @@ Rails.application.routes.draw do
 
   get '/contact' => 'site#contact'
 
-  get '/Admin' => 'user#admin_login'
+  get '/admin' => 'user#admin_login'
 
+  get '/logout' => 'user#logout'
+
+  get '/cart' => 'cart#index'
+
+  get '/cart/id' => 'cart#add'
+
+  get '/cart/clear' => 'cart#clearCart'
+
+  get '/signedinuserprofile' => 'profiles#signedinuserprofile'
   
-  devise_for :users
+
   resources :items
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
