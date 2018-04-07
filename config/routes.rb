@@ -19,10 +19,10 @@ Rails.application.routes.draw do
   get '/admin' => 'user#admin_login'
 
   get '/logout' => 'user#logout'
-
+  get '/cart/:id' => 'cart#add'
   get '/cart' => 'cart#index'
 
-  get '/cart/id' => 'cart#add'
+
 
   get '/cart/clear' => 'cart#clearCart'
 

@@ -1,0 +1,19 @@
+#item-wrapper 
+    display: grid
+    grid-gap: 20px
+    grid-template-columns: 1fr 1fr 1fr
+    justify-items: center
+    // this will automatically fill screen with products and auto scale down with screen size
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr))
+.item-container
+    border: solid grey 1px
+    padding: 20px
+    display: flex
+    
+.image
+    display: flex
+    justify-content: center
+
+a
+    color: white
+    

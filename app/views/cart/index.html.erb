@@ -2,50 +2,57 @@
 
 <!-- Check if we have items in cart -->
 <% if @cart.empty? %>
-  <p>Cart has no items</p>
+  <div class="empty-cart">Your cart has no items</div>
 <% end %>
 
 <% total = 0 %>
 
 <div class="cart">
 
-  <div class="cart_info_container">
 
-    <div class="cart_info">Product</div>
-    <div class="cart_info">Price</div>
-    <div class="cart_info">Quantity</div>
-    <div class="cart_info">Total</div>
-
-  </div>
-  
+ <div class="container">
   <!-- loop through cart items -->
- <% @cart.each do |id,quantity| %>
-  <% item = item.find_by_id(id) %>
+ <% @cart.each do |id, quantity| %>
 
-  <div class="item_line">
+  <% item = Item.find_by_id(id) %>
 
-    <div class="item_line_image">
-      <%= link_to (image_tag item.image_url, :style => "height:60px"), item %>
-    </div>
-    <div class="item_line_title">
-      <%= number_to_currency(item.price) %>
-    </div>
-    <div class="item_line_quantity">
-      <%= quantity %>
-    </div>
-    <div class="item_line_price">
-      <%= number_to_currency(quantity * item.price, :unit => "EUR")%>
+
+    <div class="item-line row">
+	    <div class="item_line_image col-sm">
+	      <%= link_to (image_tag item.image_url, :style => "height:60px"), item %>
+	    </div>
+	    <div class="item_line_title col-sm">
+	      <%= number_to_currency(item.price) %>
+	    </div>
+	    <div class="item_line_quantity col-sm">
+	      <%= quantity %>
+	    </div>
+	    <div class="item_line_price col-sm">
+	      <%= number_to_currency(quantity * item.price, :unit => "EUR") %>
+	    </div>
     </div>
 
-    <!-- calculate total -->
+    <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+    </div>
+    
+  <!-- calculate total -->
     <% total += quantity * item.price %>
  <% end %>
-        
-  </div>
-
+ </div>	  
   <div id="cart_total">Total: </div>
   <div id="total_output">
-    <%= number_to_currency(total, :unit => "EUR" %>
+    <%= number_to_currency(total, :unit => "&euro;".html_safe) %>
   </div>
 
   <div id="continue_shopping">
