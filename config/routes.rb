@@ -22,8 +22,6 @@ Rails.application.routes.draw do
   get '/cart/:id' => 'cart#add'
   get '/cart' => 'cart#index'
 
-
-
   get '/cart/clear' => 'cart#clearCart'
 
   get '/signedinuserprofile' => 'profiles#signedinuserprofile'

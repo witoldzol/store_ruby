@@ -1,17 +1,44 @@
 #item-wrapper 
-    display: grid
-    grid-gap: 20px
-    grid-template-columns: 1fr 1fr 1fr
-    justify-items: center
-    // this will automatically fill screen with products and auto scale down with screen size
-    grid-template-columns: repeat(auto-fill, minmax(200px,1fr))
+  display: grid
+  grid-gap: 20px
+  grid-template-columns: 1fr 1fr 1fr
+  justify-items: center
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr))
+  margin: 10%
+
 .item-container
-    border: solid grey 1px
-    padding: 20px
+  border: solid grey 1px
+  padding: 20px
+  padding-bottom: 35px
     
 .image
-    display: flex
-    justify-content: center
+  display: flex
+  justify-content: center
 
 a
+  color: black
+
+.price
+  display: flex
+  justify-content: center
+  padding: 15px
+  font-size: 1.5em
+    
+
+.buttons
+  width: 50%
+  height: 40px
+  margin: auto
+  display: inline
+
+.centered
+  text-align: center
+  padding: 25px
+  
+#footer
+  background-color: darkgrey
+  padding: 25px
+  width: 100%
+  h6
     color: white
+    font-size: 20px
