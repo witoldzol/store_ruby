@@ -17,20 +17,27 @@
         </div>
         <div class="buttons">
 		
-	<% if current_user != nil %>
-		  <% if current_user.try(:admin?) %>
-	          <button class="btn btn-primary"><%= link_to 'Edit', edit_item_path(item), :style => "color:white" %></button>
-		  <button class="btn btn-danger"><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:white" %></button>
-		  <% else %>
-		  <!--		  <button class="add-to-cart btn btn-primary"><% link_to :controller => :cart, :action => :add, :id => :item %>Add to cart</button> -->
-
-		  <button class="btn btn-success"><a href="/cart/<%= item.id %>">Add</a></button>
-		  <% end %>
-		  <% else %>
-		  
-	  <button class="btn btn-primary log-in-button"> <%= link_to "Sign in", new_session_path(:user) %></button>
+	      <% if current_user != nil %>
+      
+          <% if current_user.try(:admin?) %>
+        
+            <button class="btn btn-primary"><%= link_to 'Edit', edit_item_path(item), :style => "color:white" %></button>
+          
+            <button class="btn btn-danger"><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:white" %></button>
+          
+          <% else %>
+          
+            <button class="btn btn-success"><a href="/cart/<%= item.id %>">Add</a></button>
+      
+          <% end %>
+    
+        <% else %>
+        
+          <button class="btn btn-primary log-in-button"> <%= link_to "Sign in", new_session_path(:user) %></button>
+    
         <% end %>
-        </div>
+    
+    </div>
     </div>    
   <% end %>
   

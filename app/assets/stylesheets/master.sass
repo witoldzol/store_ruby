@@ -6,11 +6,19 @@
   grid-template-columns: repeat(auto-fill, minmax(200px,1fr))
   margin: 10%
 
+  //container that holds the items (picture / price / button)
 .item-container
   border: solid grey 1px
   padding: 20px
   padding-bottom: 35px
-    
+  display: flex
+  flex-direction: column
+  justify-content: center
+  
+.buttons
+  min-width: 100px
+  button
+    width: 100px  
 .image
   display: flex
   justify-content: center
@@ -42,3 +50,20 @@ a
   h6
     color: white
     font-size: 20px
+//two buttons -- log in / register && CART button
+.btn-cont
+  min-width: 150px
+  display: inline-block
+  float: right
+  button
+    min-width: 100%
+
+.btn
+  a
+    color: white
+
+.nav-link:hover
+  background-color: lightgrey
+
+.navbar
+  padding: 0
