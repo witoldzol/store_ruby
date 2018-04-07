@@ -1,3 +1,21 @@
+
+html
+  height: 100%
+  box-sizing: border-box
+
+
+*,
+*:before,
+*:after 
+  box-sizing: inherit
+
+
+body
+  position: relative
+  min-height: 100%
+    
+  // -------------------------------------------------------------------- PRODUCTS PAGE  
+//-----------------------------------------------------------------------------------------------------------------------------
 #item-wrapper 
   display: grid
   grid-gap: 20px
@@ -44,13 +62,17 @@ a
   padding: 25px
   
 #footer
+  position: absolute
+  bottom: 0
   background-color: darkgrey
   padding: 25px
   width: 100%
   h6
     color: white
     font-size: 20px
-//two buttons -- log in / register && CART button
+
+  
+  //two buttons -- log in / register && CART button
 .btn-cont
   min-width: 150px
   display: inline-block
@@ -67,3 +89,39 @@ a
 
 .navbar
   padding: 0
+
+// -------------------------------------------------------------------- SHOPPING CART PAGE  
+//-----------------------------------------------------------------------------------------------------------------------------
+#continue-shopping
+  padding: 20px
+  
+.empty-cart
+  color: coral
+  font-size: 25px
+
+#total-output
+  font-size: 20px
+  font-weight: bolder
+  text-align: center
+  width: 100px
+  padding: 20px
+  border: solid grey 2px
+  margin: auto
+.item-line
+  display: flex
+  align-items: center
+//small screen
+@media (max-width: 575px)
+  .item-line
+    display: flex
+    flex-direction: column
+    justify-content: center
+    div
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      padding: 20px
+  #total-output
+    margin-bottom: 10%
+   

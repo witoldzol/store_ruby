@@ -1,8 +1,8 @@
-<h1>Shopping Cart</h1>
+<h1 class="centered"><strong>Your Shopping Cart</strong>  </h1>
 
 <!-- Check if we have items in cart -->
 <% if @cart.empty? %>
-  <div class="empty-cart">Your cart has no items</div>
+  <div class="empty-cart centered">Your cart has no items</div>
 <% end %>
 
 <% total = 0 %>
@@ -11,13 +11,22 @@
 
 
  <div class="container">
-  <!-- loop through cart items -->
+ <hr/>
+
+  <div class="item-line row">
+    <div class="item_line_image col-sm"></div>
+    <div class="item_line_image col-sm"><strong>Price</strong></div>
+    <div class="item_line_image col-sm"><strong>Qty</strong></div>
+    <div class="item_line_image col-sm"><strong>Sub-Total</strong></div>
+  </div>
+  <hr/>
+    <!-- loop through cart items -->
  <% @cart.each do |id, quantity| %>
 
   <% item = Item.find_by_id(id) %>
 
-
     <div class="item-line row">
+
 	    <div class="item_line_image col-sm">
 	      <%= link_to (image_tag item.image_url, :style => "height:60px"), item %>
 	    </div>
@@ -31,33 +40,18 @@
 	      <%= number_to_currency(quantity * item.price, :unit => "EUR") %>
 	    </div>
     </div>
-
-    <div class="container">
-  <div class="row">
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-  </div>
-    </div>
-    
+  <hr/>  
   <!-- calculate total -->
     <% total += quantity * item.price %>
  <% end %>
  </div>	  
-  <div id="cart_total">Total: </div>
-  <div id="total_output">
-    <%= number_to_currency(total, :unit => "&euro;".html_safe) %>
+  
+  <div id="total-output">Total:
+    <%= number_to_currency(total, :unit => "&euro;".html_safe) %> 
   </div>
 
-  <div id="continue_shopping">
-
-    <%= link_to 'Continue Shopping', :controller => :items %>
+  <div id="continue-shopping">
+    <%= link_to '<button class="btn btn-success">Continue Shopping</button>'.html_safe, :controller => :items %>
   </div>
   
 </div>
