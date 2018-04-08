@@ -25,6 +25,12 @@ class ItemsController < ApplicationController
       @cart = {}
     end
 
+    #user variable
+    if session[:login] = 1
+      @user = session[:login]
+    else
+      @user = nil
+    end
   end
 
   # GET /items/1

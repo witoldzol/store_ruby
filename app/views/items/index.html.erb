@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+  
 <h1 class="centered" >Our catalogue</h1>
 
 <!-- SEARCH FORM -->
@@ -8,6 +8,15 @@
   <%= text_field_tag :search, params[:search], placeholder: "Search" %>
 <% end %>
 </div>
+
+<hr/>
+<div id="buttons-cart-profile">
+  <div id="cart-count" class=" btn btn-info">Number of items in cart: <%= @cart.count %></div>
+  <% if current_user != nil %>
+  <button class="btn btn-success"><a href="/profiles/<%= @user %>">Go to your profile</a></button>
+  <% end %>
+</div>
+<hr/>
 <div id="item-wrapper">
   <!-- loop through all items -->
   <% @items.each do |item| %>

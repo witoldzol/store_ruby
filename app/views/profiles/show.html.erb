@@ -1,24 +1,25 @@
+
+
 <p id="notice"><%= notice %></p>
+<div id="profile-wrapper">
+  <div>
+    <p>
+      <strong>Firstname:</strong>
+      <%= @profile.firstname %>
+    </p>
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @profile.firstname %>
-</p>
+    <p>
+      <strong>Lastname:</strong>
+      <%= @profile.lastname %>
+    </p>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @profile.lastname %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @profile.address %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+    <p>
+      <strong>Address:</strong>
+      <%= @profile.address %>
+    </p>
+  </div>
+  <div>
+<%= link_to 'Edit', edit_profile_path(@profile), {:class=>"btn btn-info"} %> |
+<%= link_to 'Back', profiles_path, {:class=>"btn btn-danger"} %>
+</div>
+</div>
