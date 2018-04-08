@@ -2,6 +2,15 @@
 
 <h1 class="centered" >Our catalogue</h1>
 
+<!-- SEARCH FORM -->
+
+
+
+<div id="search-bar">
+<%= form_tag(items_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+<% end %>
+</div>
 <div id="item-wrapper">
   <!-- loop through all items -->
   <% @items.each do |item| %>
@@ -26,9 +35,9 @@
             <button class="btn btn-danger"><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:white" %></button>
           
           <% else %>
-          
+
             <button class="btn btn-success"><a href="/cart/<%= item.id %>">Add</a></button>
-      
+	    
           <% end %>
     
         <% else %>

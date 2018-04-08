@@ -15,13 +15,13 @@
 <div id="item-price">
   <%= number_to_currency(@item.price, :unit => "&euro; ".html_safe) %>
 </div>
-
 <!-- check if user is an admin and display 'edit' button only if evaluates to 'true' -->
 <% if current_user.try(:admin?) %>  
 	  <%= link_to '<button class="btn btn-primary">Edit</button>'.html_safe, edit_item_path(@item) %> |
 	  <%= link_to '<button class="btn btn-success">Back</button>'.html_safe, items_path %>
 <% else %>
           <%= link_to '<button class="btn btn-success">Back</button>'.html_safe, items_path %>
-<% end %>
+	  <% end %>
+
 </div>
 </div>

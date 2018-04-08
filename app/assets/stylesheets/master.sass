@@ -3,17 +3,17 @@ html
   height: 100%
   box-sizing: border-box
 
-
 *,
 *:before,
 *:after 
   box-sizing: inherit
 
-
 body
   position: relative
   min-height: 100%
-    
+
+
+
   // -------------------------------------------------------------------- PRODUCTS PAGE  
 //-----------------------------------------------------------------------------------------------------------------------------
 #item-wrapper 
@@ -93,6 +93,8 @@ a
 
 .navbar
   padding: 0
+.navbar-brand
+  color: coral!important
 
 // -------------------------------------------------------------------- SHOPPING CART PAGE  
 //-----------------------------------------------------------------------------------------------------------------------------
@@ -167,10 +169,49 @@ input
 #item-display
   padding: 50px
   background-color: white
+  display: flex
+  flex-direction: column
   div
     padding: 20px
     border: lightgrey 1px solid
     text-align: center
+  a
+    display: block
+    align-self: center
 
-#item-title
-  font-size: 1.5em
+
+// ------------------------ SEARCH BAR
+#search-bar
+  width: 100%
+  display: flex
+  justify-content: center
+  
+input 
+  outline: none
+
+#search
+  -webkit-appearance: textfield
+  -webkit-box-sizing: content-box
+  font-family: inherit
+  font-size: 100%
+  background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center
+  border: solid 1px #ccc
+  padding: 9px 10px 9px 32px
+  width: 55px
+	
+  -webkit-border-radius: 1em
+  -moz-border-radius: 1em
+  border-radius: 1em
+	
+  -webkit-transition: all .5s
+  -moz-transition: all .5s
+  transition: all .5s
+
+#search:focus 
+  width: 220px
+  background-color: #fff
+  border-color: #66CC77
+  box-shadow: 0 0 5px rgba(109,207,246,.5)
+
+
+  
