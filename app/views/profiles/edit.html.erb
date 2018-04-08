@@ -1,6 +1,11 @@
 <h1>Editing Profile</h1>
-
-<%= render 'form', profile: @profile %>
-
-<%= link_to 'Show', @profile %> |
-<%= link_to 'Back', profiles_path %>
+<div id="edit-profile-wrapper">
+  <%= render 'form', profile: @profile %>
+  
+  <% if current_user.try(:admin?) %>
+    <%= link_to 'Show', @profile , {:class=>"btn btn-info"} %> |
+    <%= link_to 'Back', profiles_path, {:class=>"btn btn-success"} %>
+  <% else %>
+    <%= link_to 'Show', @profile,  {:class=>"btn btn-info"} %>
+  <% end %>
+</div>

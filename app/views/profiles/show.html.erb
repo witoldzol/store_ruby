@@ -19,7 +19,16 @@
     </p>
   </div>
   <div>
-<%= link_to 'Edit', edit_profile_path(@profile), {:class=>"btn btn-info"} %> |
-<%= link_to 'Back', profiles_path, {:class=>"btn btn-danger"} %>
+<% if current_user.try(:admin?) %>
+
+   <%= link_to 'Edit', edit_profile_path(@profile), {:class=>"btn btn-info"} %> |
+   <%= link_to 'Back', profiles_path, {:class=>"btn btn-danger"} %>
+
+<% else %>
+
+   <%= link_to 'Edit', edit_profile_path(@profile), {:class=>"btn btn-info"} %>
+
+<% end %>
+
 </div>
 </div>
