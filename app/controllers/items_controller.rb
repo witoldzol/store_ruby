@@ -17,6 +17,14 @@ class ItemsController < ApplicationController
     else
       @items = Item.all.order("created_at DESC")
     end
+
+    #cart variable
+    if session[:cart] then
+      @cart = session[:cart]
+    else
+      @cart = {}
+    end
+
   end
 
   # GET /items/1
