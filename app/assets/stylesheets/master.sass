@@ -8,10 +8,11 @@ html
 *:after 
   box-sizing: inherit
 
-body
+body 
   position: relative
+  margin: 0
+  padding-bottom: 6rem
   min-height: 100%
-
 
 
   // -------------------------------------------------------------------- PRODUCTS PAGE  
@@ -69,17 +70,16 @@ a
   display: flex
   justify-content: center
 
-  
-#footer
-  position: absolute
-  bottom: 0
-  background-color: darkgrey
-  padding: 25px
-  width: 100%
-  h6
-    color: white
-    font-size: 20px
 
+.footer 
+  position: absolute
+  right: 0
+  bottom: 0
+  left: 0
+  padding: 1rem
+  background-color: #efefef
+  text-align: center
+    
   
   //two buttons -- log in / register && CART button
 .btn-cont
@@ -257,3 +257,67 @@ input
   
 #edit-profile-wrapper > form > div:nth-child(7)
   display: none
+
+
+// ----------------------------- ABOUT US
+
+#about-wrapper
+  margin: 10%
+  height: 100vh
+  display: flex
+  h2
+    font-size: 3em
+    text-align: right
+   
+#about-content
+  font-size: 1.5em
+  
+
+//------------------------------ CONTACT FORM  
+
+textarea 
+  resize: none
+
+.form-label 
+  font-size: 12px
+  color: #5e9bfc
+  margin: 0
+  display: block
+  opacity: 1
+  -webkit-transition: .333s ease top, .333s ease opacity
+  transition: .333s ease top, .333s ease opacity
+
+.form-control 
+  border-radius: 0
+  border-color: #ccc
+  border-width: 0 0 2px 0
+  border-style: none none solid none
+  box-shadow: none
+
+.form-control:focus 
+  box-shadow: none
+  border-color: #5e9bfc
+
+.js-hide-label 
+  opacity: 0 	
+
+.js-unhighlight-label 
+  color: #999 
+
+.btn-start-order 
+  background: 0 0 #ffffff
+  border: 1px solid #2f323a
+  border-radius: 3px
+  color: #2f323a
+  font-family: "Raleway", sans-serif
+  font-size: 16px
+  line-height: inherit
+  margin: 30px 0
+  padding: 10px 50px
+  text-transform: uppercase
+  transition: all 0.25s ease 0s
+
+.btn-start-order:hover,.btn-start-order:active, .btn-start-order:focus 
+  border-color: #5e9bfc
+  color: #5e9bfc
+  
